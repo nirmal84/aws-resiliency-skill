@@ -1,6 +1,6 @@
-# AWS Resiliency Skill for Claude
+# AWS Resiliency Skill for Claude Code & Kiro
 
-A Claude agent skill that acts as a senior AWS resiliency architect — reviewing infrastructure code, application code, and architecture designs for failure modes, blast radius, and recovery gaps.
+An agent skill for **Claude Code** and **Kiro** that acts as a senior AWS resiliency architect — reviewing infrastructure code, application code, and architecture designs for failure modes, blast radius, and recovery gaps.
 
 Built for engineering teams building on AWS.
 
@@ -10,7 +10,7 @@ Built for engineering teams building on AWS.
 
 ## What This Skill Does
 
-When activated, this skill transforms Claude into an expert resiliency reviewer that:
+When activated, this skill transforms your agent into an expert resiliency reviewer that:
 
 - Reviews **IaC** (CDK, CloudFormation, Terraform) for infrastructure-level resiliency gaps
 - Reviews **application code** (AWS SDK usage, retry logic, connection handling, circuit breakers) for behavioural resiliency issues
@@ -31,9 +31,9 @@ When activated, this skill transforms Claude into an expert resiliency reviewer 
 
 ---
 
-## When Claude Will Use This Skill
+## When This Skill Activates
 
-This skill activates automatically when someone:
+This skill is triggered automatically when someone:
 
 - Shares CDK, CloudFormation, Terraform, or application code and asks about resiliency, availability, fault tolerance, failover, DR, or reliability
 - Asks _"is this architecture resilient?"_, _"what happens if this AZ goes down?"_, _"how do I make this highly available?"_, or _"what's my RTO/RPO here?"_
@@ -112,7 +112,7 @@ Every review ends with:
 
 ```
 aws-resiliency-skill/
-├── SKILL.md                                  # Skill definition loaded by Claude
+├── SKILL.md                                  # Skill definition loaded by Claude Code / Kiro
 ├── README.md                                 # This file
 ├── CONTRIBUTORS.md                           # Contributors
 ├── references/
@@ -132,9 +132,11 @@ aws-resiliency-skill/
    git clone https://github.com/nirmal84/aws-resiliency-skill.git
    ```
 
-2. Add the skill to your Claude skills directory (typically `~/.claude/skills/`) or follow your Claude agent SDK configuration.
+2. **Claude Code:** Add the skill to your skills directory (typically `~/.claude/skills/`) or reference it in your agent SDK configuration.
 
-3. Claude will automatically load and apply the skill during relevant conversations.
+3. **Kiro:** Add the skill to your Kiro project's skills directory and it will be picked up automatically.
+
+4. The skill will automatically activate during relevant conversations.
 
 ---
 
