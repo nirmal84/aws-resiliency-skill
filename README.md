@@ -108,20 +108,11 @@ Every review ends with:
 
 ---
 
-## Recommended AWS MCP Servers
+## Companion: AWS Resiliency MCP Plugin
 
-This skill works best when paired with official AWS MCP servers from [`awslabs/mcp`](https://github.com/awslabs/mcp). A ready-to-use `mcp.json` is included in this repo.
+This skill works best when paired with the **[aws-resiliency-mcp](https://github.com/nirmal84/aws-resiliency-mcp)** plugin, which configures 6 official AWS MCP servers from [`awslabs/mcp`](https://github.com/awslabs/mcp) for IaC validation, CloudWatch analysis, Well-Architected guidance, and documentation lookup.
 
-| MCP Server | What It Adds to Resiliency Reviews |
-|---|---|
-| **AWS IaC** | CloudFormation validation via cfn-lint, compliance checking via cfn-guard, CDK best practices, deployment troubleshooting (30+ failure patterns) |
-| **AWS Terraform** | Terraform best practices, Checkov security scanning, Well-Architected guidance for Terraform configs |
-| **AWS Knowledge** | Up-to-date AWS documentation, Well-Architected materials, troubleshooting guides, regional availability |
-| **Amazon CloudWatch** | Live metrics, alarm status/history, CloudWatch Logs Insights queries, trend detection, alarm recommendations |
-| **CloudWatch Application Signals** | Service health, SLO compliance tracking, distributed tracing, code-level latency analysis |
-| **AWS Documentation** | Direct AWS documentation page lookup and search across all services |
-
-**How they work together:** The skill provides the resiliency expertise (what to look for, failure modes, blast radius). The MCP servers provide real data (actual validation results, live metrics, latest documentation). The host AI combines both to produce expert-level reviews.
+> **Skill = the brain** (what to look for, failure modes, blast radius) · **MCP plugin = the hands** (real validation, live metrics, latest docs)
 
 ---
 
@@ -130,7 +121,6 @@ This skill works best when paired with official AWS MCP servers from [`awslabs/m
 ```
 aws-resiliency-skill/
 ├── SKILL.md                                  # Skill definition loaded by Claude Code / Kiro
-├── mcp.json                                  # AWS MCP server configuration (6 servers)
 ├── README.md                                 # This file
 ├── CONTRIBUTORS.md                           # Contributors
 ├── LICENSE                                   # MIT-0 (MIT No Attribution)
@@ -146,51 +136,18 @@ aws-resiliency-skill/
 
 ## Installation
 
-### Prerequisites
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/nirmal84/aws-resiliency-skill.git
+   ```
 
-- Python 3.10+ with `uvx` ([install uv](https://docs.astral.sh/uv/getting-started/installation/)) — required to run the AWS MCP servers
-- AWS credentials configured (`aws configure` or environment variables) — required for CloudWatch and live account access
+2. **Claude Code:** Add the skill to your skills directory (typically `~/.claude/skills/`) or reference it in your agent SDK configuration.
 
-### Step 1: Clone
+3. **Kiro:** Add the skill to your Kiro project's skills directory and it will be picked up automatically.
 
-```bash
-git clone https://github.com/nirmal84/aws-resiliency-skill.git
-```
+4. The skill will automatically activate during relevant conversations.
 
-### Step 2: Set up the skill
-
-**Claude Code:**
-```bash
-# Copy the skill to your Claude Code skills directory
-cp -r aws-resiliency-skill ~/.claude/skills/aws-resiliency-skill
-```
-
-**Kiro:** Add the skill to your Kiro project's skills directory and it will be picked up automatically.
-
-### Step 3: Add the MCP servers
-
-**Claude Code** — copy the MCP config:
-```bash
-# Merge mcp.json into your Claude Code MCP configuration
-# Or add individual servers via CLI:
-claude mcp add aws-iac -- uvx awslabs.aws-iac-mcp-server@latest
-claude mcp add aws-terraform -- uvx awslabs.terraform-mcp-server@latest
-claude mcp add aws-knowledge -- uvx awslabs.aws-knowledge-mcp-server@latest
-claude mcp add aws-cloudwatch -- uvx awslabs.cloudwatch-mcp-server@latest
-claude mcp add aws-cloudwatch-signals -- uvx awslabs.cloudwatch-applicationsignals-mcp-server@latest
-claude mcp add aws-docs -- uvx awslabs.aws-documentation-mcp-server@latest
-```
-
-**Cursor / Windsurf / Other MCP editors:** Copy the contents of `mcp.json` into your editor's MCP server configuration.
-
-### Step 4: Verify
-
-The skill activates automatically during relevant conversations. Try:
-
-```
-Review this CloudFormation template for resiliency gaps:
-[paste your template]
-```
+5. **(Optional)** Add the companion MCP plugin for enhanced reviews — see [aws-resiliency-mcp](https://github.com/nirmal84/aws-resiliency-mcp).
 
 ---
 
