@@ -2,7 +2,7 @@
 
 A Claude agent skill that acts as a senior AWS resiliency architect — reviewing infrastructure code, application code, and architecture designs for failure modes, blast radius, and recovery gaps.
 
-Built for AWS Technical Account Managers (TAMs) and customer engineering teams building on AWS.
+Built for engineering teams building on AWS.
 
 ---
 
@@ -22,8 +22,8 @@ When activated, this skill transforms Claude into an expert resiliency reviewer 
 
 | Audience | How It Helps |
 |---|---|
-| **AWS TAMs** | Prepare rigorous customer architecture reviews, ORRs, game day exercises, and Well-Architected Reviews with opinionated, non-obvious findings |
-| **Customer engineers** | Get senior peer-level code review with specific line-level findings, corrected code snippets, and failure mode explanations |
+| **Cloud architects** | Prepare rigorous architecture reviews, ORRs, and Well-Architected Reviews with opinionated, non-obvious findings |
+| **Engineers** | Get senior peer-level code review with specific line-level findings, corrected code snippets, and failure mode explanations |
 
 ---
 
@@ -35,7 +35,7 @@ This skill activates automatically when someone:
 - Asks _"is this architecture resilient?"_, _"what happens if this AZ goes down?"_, _"how do I make this highly available?"_, or _"what's my RTO/RPO here?"_
 - Wants a Well-Architected Reliability pillar review of their stack or code
 - Asks about specific AWS service failure modes — RDS failover behaviour, DynamoDB replication lag, Lambda cold starts, SQS visibility timeout edge cases, etc.
-- Is preparing a customer for an architecture review, ORR, game day, or WAR
+- Is preparing for an architecture review, ORR, game day, or Well-Architected Review
 - Mentions: **HA, high availability, fault tolerance, disaster recovery, RTO, RPO, chaos engineering, game day, ORR, SLA, SLO, circuit breaker, retry storm, thundering herd, split-brain, failover**
 
 ---
@@ -116,7 +116,7 @@ aws-resiliency-skill/
 │   ├── well-architected-reliability.md      # Full REL pillar question set with best practices
 │   └── dr-patterns-and-runbooks.md          # DR pattern templates, game day exercises, ORR checklist
 └── scripts/
-    └── resiliency-review-template.md        # Structured output template for formal TAM deliverables
+    └── resiliency-review-template.md        # Structured output template for formal resiliency review deliverables
 ```
 
 ---
