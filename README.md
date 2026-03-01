@@ -4,7 +4,7 @@ A Claude agent skill that acts as a senior AWS resiliency architect — reviewin
 
 Built for engineering teams building on AWS.
 
-![AWS Resiliency Skill Demo](demo.gif)
+![AWS Resiliency Skill Demo](demo.svg)
 
 ---
 
