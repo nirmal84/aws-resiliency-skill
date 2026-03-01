@@ -22,8 +22,10 @@ When activated, this skill transforms Claude into an expert resiliency reviewer 
 
 | Audience | How It Helps |
 |---|---|
-| **Cloud architects** | Prepare rigorous architecture reviews, ORRs, and Well-Architected Reviews with opinionated, non-obvious findings |
-| **Engineers** | Get senior peer-level code review with specific line-level findings, corrected code snippets, and failure mode explanations |
+| **Cloud Architects** | Prepare rigorous architecture reviews, ORRs, and Well-Architected Reviews with opinionated, non-obvious findings |
+| **Cloud Engineers** | Get senior peer-level IaC and SDK code review with specific line-level findings and corrected code snippets |
+| **Site Reliability Engineers (SREs)** | Identify failure modes, blast radius, and recovery gaps before they become incidents |
+| **Platform Engineers** | Validate infrastructure patterns for reliability, failover behaviour, and operational readiness |
 
 ---
 
