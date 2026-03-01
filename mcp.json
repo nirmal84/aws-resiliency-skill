@@ -1,0 +1,46 @@
+{
+  "mcpServers": {
+    "aws-iac": {
+      "command": "uvx",
+      "args": ["awslabs.aws-iac-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "description": "CloudFormation validation (cfn-lint), compliance checking (cfn-guard), CDK best practices, deployment troubleshooting"
+    },
+    "aws-terraform": {
+      "command": "uvx",
+      "args": ["awslabs.terraform-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "description": "Terraform best practices, Checkov security scanning, Well-Architected guidance for Terraform"
+    },
+    "aws-knowledge": {
+      "command": "uvx",
+      "args": ["awslabs.aws-knowledge-mcp-server@latest"],
+      "description": "AWS documentation, Well-Architected materials, best practices, regional availability"
+    },
+    "aws-cloudwatch": {
+      "command": "uvx",
+      "args": ["awslabs.cloudwatch-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "description": "CloudWatch metrics, alarms, logs, Insights queries, trend detection, alarm recommendations"
+    },
+    "aws-cloudwatch-signals": {
+      "command": "uvx",
+      "args": ["awslabs.cloudwatch-applicationsignals-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "description": "Application health, SLO compliance tracking, distributed tracing, latency analysis"
+    },
+    "aws-docs": {
+      "command": "uvx",
+      "args": ["awslabs.aws-documentation-mcp-server@latest"],
+      "description": "Direct AWS documentation page lookup and search"
+    }
+  }
+}
